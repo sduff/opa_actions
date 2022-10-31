@@ -18,5 +18,8 @@ jobs:
         repository: sduff/opa_policy_repo
         path: policies
 
+    - name: Check files
+      run: "ls -alR $GITHUB_WORKSPACE"
+     
     - name: Run OPA Tests
       run: opa test policies/*.rego -v
