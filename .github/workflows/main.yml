@@ -1,0 +1,22 @@
+name: Run OPA Tests
+on: [push]
+jobs:
+  Run-OPA-Tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out build repository code
+      uses: actions/checkout@v3
+      
+    - name: Setup OPA
+      uses: open-policy-agent/setup-opa@v2
+      with:
+        version: latest
+
+    - name: Check out policy repository
+      uses: actions/checkout@v3
+      with:
+        repository: sduff/opa_policy_repo
+        path: policies
+
+    - name: Run OPA Tests
+      run: opa test policies/*.rego -v
