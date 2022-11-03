@@ -1,6 +1,6 @@
 #!/bin/sh
 
-opa_output=$( opa eval --data policy.rego --input example.tfplan.json --format pretty "data.confluent.deny" 2>&1 )
+opa_output=$( opa eval --data policies/policy.rego --input example.tfplan.json --format pretty "data.confluent.deny" 2>&1 )
 echo $opa_output
 
 if [ "$opa_output" == "[]" ]; then
