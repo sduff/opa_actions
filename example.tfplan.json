@@ -1,0 +1,1652 @@
+{
+  "format_version": "0.2",
+  "terraform_version": "1.0.9",
+  "variables": {
+    "confluent_cloud_api_key": {
+      "value": "SNIP"
+    },
+    "confluent_cloud_api_secret": {
+      "value": "SNAP"
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "resource-ids": {
+        "sensitive": true
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "confluent_api_key.app-consumer-kafka-api-key",
+          "mode": "managed",
+          "type": "confluent_api_key",
+          "name": "app-consumer-kafka-api-key",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 0,
+          "values": {
+            "description": "Kafka API Key that is owned by 'app-consumer' service account",
+            "disable_wait_for_ready": false,
+            "display_name": "app-consumer-kafka-api-key",
+            "managed_resource": [
+              {
+                "environment": [
+                  {}
+                ]
+              }
+            ],
+            "owner": [
+              {}
+            ]
+          },
+          "sensitive_values": {
+            "managed_resource": [
+              {
+                "environment": [
+                  {}
+                ]
+              }
+            ],
+            "owner": [
+              {}
+            ]
+          }
+        },
+        {
+          "address": "confluent_api_key.app-manager-kafka-api-key",
+          "mode": "managed",
+          "type": "confluent_api_key",
+          "name": "app-manager-kafka-api-key",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 0,
+          "values": {
+            "description": "Kafka API Key that is owned by 'app-manager' service account",
+            "disable_wait_for_ready": false,
+            "display_name": "app-manager-kafka-api-key",
+            "managed_resource": [
+              {
+                "environment": [
+                  {}
+                ]
+              }
+            ],
+            "owner": [
+              {}
+            ]
+          },
+          "sensitive_values": {
+            "managed_resource": [
+              {
+                "environment": [
+                  {}
+                ]
+              }
+            ],
+            "owner": [
+              {}
+            ]
+          }
+        },
+        {
+          "address": "confluent_api_key.app-producer-kafka-api-key",
+          "mode": "managed",
+          "type": "confluent_api_key",
+          "name": "app-producer-kafka-api-key",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 0,
+          "values": {
+            "description": "Kafka API Key that is owned by 'app-producer' service account",
+            "disable_wait_for_ready": false,
+            "display_name": "app-producer-kafka-api-key",
+            "managed_resource": [
+              {
+                "environment": [
+                  {}
+                ]
+              }
+            ],
+            "owner": [
+              {}
+            ]
+          },
+          "sensitive_values": {
+            "managed_resource": [
+              {
+                "environment": [
+                  {}
+                ]
+              }
+            ],
+            "owner": [
+              {}
+            ]
+          }
+        },
+        {
+          "address": "confluent_environment.staging",
+          "mode": "managed",
+          "type": "confluent_environment",
+          "name": "staging",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 0,
+          "values": {
+            "display_name": "Staging"
+          },
+          "sensitive_values": {}
+        },
+        {
+          "address": "confluent_kafka_acl.app-consumer-read-on-group",
+          "mode": "managed",
+          "type": "confluent_kafka_acl",
+          "name": "app-consumer-read-on-group",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 2,
+          "values": {
+            "credentials": [
+              {}
+            ],
+            "host": "*",
+            "kafka_cluster": [
+              {}
+            ],
+            "operation": "READ",
+            "pattern_type": "PREFIXED",
+            "permission": "ALLOW",
+            "resource_name": "confluent_cli_consumer_",
+            "resource_type": "GROUP"
+          },
+          "sensitive_values": {
+            "credentials": [
+              {
+                "secret": true
+              }
+            ],
+            "kafka_cluster": [
+              {}
+            ]
+          }
+        },
+        {
+          "address": "confluent_kafka_acl.app-consumer-read-on-topic",
+          "mode": "managed",
+          "type": "confluent_kafka_acl",
+          "name": "app-consumer-read-on-topic",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 2,
+          "values": {
+            "credentials": [
+              {}
+            ],
+            "host": "*",
+            "kafka_cluster": [
+              {}
+            ],
+            "operation": "READ",
+            "pattern_type": "LITERAL",
+            "permission": "ALLOW",
+            "resource_name": "orders",
+            "resource_type": "TOPIC"
+          },
+          "sensitive_values": {
+            "credentials": [
+              {
+                "secret": true
+              }
+            ],
+            "kafka_cluster": [
+              {}
+            ]
+          }
+        },
+        {
+          "address": "confluent_kafka_acl.app-producer-write-on-topic",
+          "mode": "managed",
+          "type": "confluent_kafka_acl",
+          "name": "app-producer-write-on-topic",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 2,
+          "values": {
+            "credentials": [
+              {}
+            ],
+            "host": "*",
+            "kafka_cluster": [
+              {}
+            ],
+            "operation": "WRITE",
+            "pattern_type": "LITERAL",
+            "permission": "ALLOW",
+            "resource_name": "orders",
+            "resource_type": "TOPIC"
+          },
+          "sensitive_values": {
+            "credentials": [
+              {
+                "secret": true
+              }
+            ],
+            "kafka_cluster": [
+              {}
+            ]
+          }
+        },
+        {
+          "address": "confluent_kafka_cluster.standard",
+          "mode": "managed",
+          "type": "confluent_kafka_cluster",
+          "name": "standard",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 1,
+          "values": {
+            "availability": "SINGLE_ZONE",
+            "basic": [],
+            "cloud": "AWS",
+            "dedicated": [],
+            "display_name": "inventory",
+            "environment": [
+              {}
+            ],
+            "region": "us-east-2",
+            "standard": [
+              {}
+            ],
+            "timeouts": null
+          },
+          "sensitive_values": {
+            "basic": [],
+            "dedicated": [],
+            "environment": [
+              {}
+            ],
+            "network": [],
+            "standard": [
+              {}
+            ]
+          }
+        },
+        {
+          "address": "confluent_kafka_topic.orders",
+          "mode": "managed",
+          "type": "confluent_kafka_topic",
+          "name": "orders",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 2,
+          "values": {
+            "credentials": [
+              {}
+            ],
+            "kafka_cluster": [
+              {}
+            ],
+            "partitions_count": 6,
+            "topic_name": "orders"
+          },
+          "sensitive_values": {
+            "config": {},
+            "credentials": [
+              {
+                "secret": true
+              }
+            ],
+            "kafka_cluster": [
+              {}
+            ]
+          }
+        },
+        {
+          "address": "confluent_role_binding.app-manager-kafka-cluster-admin",
+          "mode": "managed",
+          "type": "confluent_role_binding",
+          "name": "app-manager-kafka-cluster-admin",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 0,
+          "values": {
+            "role_name": "CloudClusterAdmin"
+          },
+          "sensitive_values": {}
+        },
+        {
+          "address": "confluent_service_account.app-consumer",
+          "mode": "managed",
+          "type": "confluent_service_account",
+          "name": "app-consumer",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 0,
+          "values": {
+            "description": "Service account to consume from 'orders' topic of 'inventory' Kafka cluster",
+            "display_name": "app-consumer"
+          },
+          "sensitive_values": {}
+        },
+        {
+          "address": "confluent_service_account.app-manager",
+          "mode": "managed",
+          "type": "confluent_service_account",
+          "name": "app-manager",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 0,
+          "values": {
+            "description": "Service account to manage 'inventory' Kafka cluster",
+            "display_name": "app-manager"
+          },
+          "sensitive_values": {}
+        },
+        {
+          "address": "confluent_service_account.app-producer",
+          "mode": "managed",
+          "type": "confluent_service_account",
+          "name": "app-producer",
+          "provider_name": "registry.terraform.io/confluentinc/confluent",
+          "schema_version": 0,
+          "values": {
+            "description": "Service account to produce to 'orders' topic of 'inventory' Kafka cluster",
+            "display_name": "app-producer"
+          },
+          "sensitive_values": {}
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "confluent_api_key.app-consumer-kafka-api-key",
+      "mode": "managed",
+      "type": "confluent_api_key",
+      "name": "app-consumer-kafka-api-key",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Kafka API Key that is owned by 'app-consumer' service account",
+          "disable_wait_for_ready": false,
+          "display_name": "app-consumer-kafka-api-key",
+          "managed_resource": [
+            {
+              "environment": [
+                {}
+              ]
+            }
+          ],
+          "owner": [
+            {}
+          ]
+        },
+        "after_unknown": {
+          "id": true,
+          "managed_resource": [
+            {
+              "api_version": true,
+              "environment": [
+                {
+                  "id": true
+                }
+              ],
+              "id": true,
+              "kind": true
+            }
+          ],
+          "owner": [
+            {
+              "api_version": true,
+              "id": true,
+              "kind": true
+            }
+          ],
+          "secret": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "managed_resource": [
+            {
+              "environment": [
+                {}
+              ]
+            }
+          ],
+          "owner": [
+            {}
+          ],
+          "secret": true
+        }
+      }
+    },
+    {
+      "address": "confluent_api_key.app-manager-kafka-api-key",
+      "mode": "managed",
+      "type": "confluent_api_key",
+      "name": "app-manager-kafka-api-key",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Kafka API Key that is owned by 'app-manager' service account",
+          "disable_wait_for_ready": false,
+          "display_name": "app-manager-kafka-api-key",
+          "managed_resource": [
+            {
+              "environment": [
+                {}
+              ]
+            }
+          ],
+          "owner": [
+            {}
+          ]
+        },
+        "after_unknown": {
+          "id": true,
+          "managed_resource": [
+            {
+              "api_version": true,
+              "environment": [
+                {
+                  "id": true
+                }
+              ],
+              "id": true,
+              "kind": true
+            }
+          ],
+          "owner": [
+            {
+              "api_version": true,
+              "id": true,
+              "kind": true
+            }
+          ],
+          "secret": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "managed_resource": [
+            {
+              "environment": [
+                {}
+              ]
+            }
+          ],
+          "owner": [
+            {}
+          ],
+          "secret": true
+        }
+      }
+    },
+    {
+      "address": "confluent_api_key.app-producer-kafka-api-key",
+      "mode": "managed",
+      "type": "confluent_api_key",
+      "name": "app-producer-kafka-api-key",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Kafka API Key that is owned by 'app-producer' service account",
+          "disable_wait_for_ready": false,
+          "display_name": "app-producer-kafka-api-key",
+          "managed_resource": [
+            {
+              "environment": [
+                {}
+              ]
+            }
+          ],
+          "owner": [
+            {}
+          ]
+        },
+        "after_unknown": {
+          "id": true,
+          "managed_resource": [
+            {
+              "api_version": true,
+              "environment": [
+                {
+                  "id": true
+                }
+              ],
+              "id": true,
+              "kind": true
+            }
+          ],
+          "owner": [
+            {
+              "api_version": true,
+              "id": true,
+              "kind": true
+            }
+          ],
+          "secret": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "managed_resource": [
+            {
+              "environment": [
+                {}
+              ]
+            }
+          ],
+          "owner": [
+            {}
+          ],
+          "secret": true
+        }
+      }
+    },
+    {
+      "address": "confluent_environment.staging",
+      "mode": "managed",
+      "type": "confluent_environment",
+      "name": "staging",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "display_name": "Staging"
+        },
+        "after_unknown": {
+          "id": true,
+          "resource_name": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "confluent_kafka_acl.app-consumer-read-on-group",
+      "mode": "managed",
+      "type": "confluent_kafka_acl",
+      "name": "app-consumer-read-on-group",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "credentials": [
+            {}
+          ],
+          "host": "*",
+          "kafka_cluster": [
+            {}
+          ],
+          "operation": "READ",
+          "pattern_type": "PREFIXED",
+          "permission": "ALLOW",
+          "resource_name": "confluent_cli_consumer_",
+          "resource_type": "GROUP"
+        },
+        "after_unknown": {
+          "credentials": [
+            {
+              "key": true,
+              "secret": true
+            }
+          ],
+          "id": true,
+          "kafka_cluster": [
+            {
+              "id": true
+            }
+          ],
+          "principal": true,
+          "rest_endpoint": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "credentials": [
+            {
+              "key": true,
+              "secret": true
+            }
+          ],
+          "kafka_cluster": [
+            {}
+          ]
+        }
+      }
+    },
+    {
+      "address": "confluent_kafka_acl.app-consumer-read-on-topic",
+      "mode": "managed",
+      "type": "confluent_kafka_acl",
+      "name": "app-consumer-read-on-topic",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "credentials": [
+            {}
+          ],
+          "host": "*",
+          "kafka_cluster": [
+            {}
+          ],
+          "operation": "READ",
+          "pattern_type": "LITERAL",
+          "permission": "ALLOW",
+          "resource_name": "orders",
+          "resource_type": "TOPIC"
+        },
+        "after_unknown": {
+          "credentials": [
+            {
+              "key": true,
+              "secret": true
+            }
+          ],
+          "id": true,
+          "kafka_cluster": [
+            {
+              "id": true
+            }
+          ],
+          "principal": true,
+          "rest_endpoint": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "credentials": [
+            {
+              "key": true,
+              "secret": true
+            }
+          ],
+          "kafka_cluster": [
+            {}
+          ]
+        }
+      }
+    },
+    {
+      "address": "confluent_kafka_acl.app-producer-write-on-topic",
+      "mode": "managed",
+      "type": "confluent_kafka_acl",
+      "name": "app-producer-write-on-topic",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "credentials": [
+            {}
+          ],
+          "host": "*",
+          "kafka_cluster": [
+            {}
+          ],
+          "operation": "WRITE",
+          "pattern_type": "LITERAL",
+          "permission": "ALLOW",
+          "resource_name": "orders",
+          "resource_type": "TOPIC"
+        },
+        "after_unknown": {
+          "credentials": [
+            {
+              "key": true,
+              "secret": true
+            }
+          ],
+          "id": true,
+          "kafka_cluster": [
+            {
+              "id": true
+            }
+          ],
+          "principal": true,
+          "rest_endpoint": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "credentials": [
+            {
+              "key": true,
+              "secret": true
+            }
+          ],
+          "kafka_cluster": [
+            {}
+          ]
+        }
+      }
+    },
+    {
+      "address": "confluent_kafka_cluster.standard",
+      "mode": "managed",
+      "type": "confluent_kafka_cluster",
+      "name": "standard",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "availability": "SINGLE_ZONE",
+          "basic": [],
+          "cloud": "AWS",
+          "dedicated": [],
+          "display_name": "inventory",
+          "environment": [
+            {}
+          ],
+          "region": "us-east-2",
+          "standard": [
+            {}
+          ],
+          "timeouts": null
+        },
+        "after_unknown": {
+          "api_version": true,
+          "basic": [],
+          "bootstrap_endpoint": true,
+          "dedicated": [],
+          "environment": [
+            {
+              "id": true
+            }
+          ],
+          "id": true,
+          "kind": true,
+          "network": true,
+          "rbac_crn": true,
+          "rest_endpoint": true,
+          "standard": [
+            {}
+          ]
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "basic": [],
+          "dedicated": [],
+          "environment": [
+            {}
+          ],
+          "network": [],
+          "standard": [
+            {}
+          ]
+        }
+      }
+    },
+    {
+      "address": "confluent_kafka_topic.orders",
+      "mode": "managed",
+      "type": "confluent_kafka_topic",
+      "name": "orders",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "credentials": [
+            {}
+          ],
+          "kafka_cluster": [
+            {}
+          ],
+          "partitions_count": 6,
+          "topic_name": "orders"
+        },
+        "after_unknown": {
+          "config": true,
+          "credentials": [
+            {
+              "key": true,
+              "secret": true
+            }
+          ],
+          "id": true,
+          "kafka_cluster": [
+            {
+              "id": true
+            }
+          ],
+          "rest_endpoint": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "config": {},
+          "credentials": [
+            {
+              "key": true,
+              "secret": true
+            }
+          ],
+          "kafka_cluster": [
+            {}
+          ]
+        }
+      }
+    },
+    {
+      "address": "confluent_role_binding.app-manager-kafka-cluster-admin",
+      "mode": "managed",
+      "type": "confluent_role_binding",
+      "name": "app-manager-kafka-cluster-admin",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "role_name": "CloudClusterAdmin"
+        },
+        "after_unknown": {
+          "crn_pattern": true,
+          "id": true,
+          "principal": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "confluent_service_account.app-consumer",
+      "mode": "managed",
+      "type": "confluent_service_account",
+      "name": "app-consumer",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Service account to consume from 'orders' topic of 'inventory' Kafka cluster",
+          "display_name": "app-consumer"
+        },
+        "after_unknown": {
+          "api_version": true,
+          "id": true,
+          "kind": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "confluent_service_account.app-manager",
+      "mode": "managed",
+      "type": "confluent_service_account",
+      "name": "app-manager",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Service account to manage 'inventory' Kafka cluster",
+          "display_name": "app-manager"
+        },
+        "after_unknown": {
+          "api_version": true,
+          "id": true,
+          "kind": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "confluent_service_account.app-producer",
+      "mode": "managed",
+      "type": "confluent_service_account",
+      "name": "app-producer",
+      "provider_name": "registry.terraform.io/confluentinc/confluent",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Service account to produce to 'orders' topic of 'inventory' Kafka cluster",
+          "display_name": "app-producer"
+        },
+        "after_unknown": {
+          "api_version": true,
+          "id": true,
+          "kind": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "output_changes": {
+    "resource-ids": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after_unknown": true,
+      "before_sensitive": true,
+      "after_sensitive": true
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "confluent": {
+        "name": "confluent",
+        "version_constraint": "1.10.0",
+        "expressions": {
+          "cloud_api_key": {
+            "references": [
+              "var.confluent_cloud_api_key"
+            ]
+          },
+          "cloud_api_secret": {
+            "references": [
+              "var.confluent_cloud_api_secret"
+            ]
+          }
+        }
+      }
+    },
+    "root_module": {
+      "outputs": {
+        "resource-ids": {
+          "sensitive": true,
+          "expression": {
+            "references": [
+              "confluent_environment.staging.id",
+              "confluent_environment.staging",
+              "confluent_kafka_cluster.standard.id",
+              "confluent_kafka_cluster.standard",
+              "confluent_kafka_topic.orders.topic_name",
+              "confluent_kafka_topic.orders",
+              "confluent_service_account.app-manager.display_name",
+              "confluent_service_account.app-manager",
+              "confluent_service_account.app-manager.id",
+              "confluent_service_account.app-manager",
+              "confluent_service_account.app-manager.display_name",
+              "confluent_service_account.app-manager",
+              "confluent_api_key.app-manager-kafka-api-key.id",
+              "confluent_api_key.app-manager-kafka-api-key",
+              "confluent_service_account.app-manager.display_name",
+              "confluent_service_account.app-manager",
+              "confluent_api_key.app-manager-kafka-api-key.secret",
+              "confluent_api_key.app-manager-kafka-api-key",
+              "confluent_service_account.app-producer.display_name",
+              "confluent_service_account.app-producer",
+              "confluent_service_account.app-producer.id",
+              "confluent_service_account.app-producer",
+              "confluent_service_account.app-producer.display_name",
+              "confluent_service_account.app-producer",
+              "confluent_api_key.app-producer-kafka-api-key.id",
+              "confluent_api_key.app-producer-kafka-api-key",
+              "confluent_service_account.app-producer.display_name",
+              "confluent_service_account.app-producer",
+              "confluent_api_key.app-producer-kafka-api-key.secret",
+              "confluent_api_key.app-producer-kafka-api-key",
+              "confluent_service_account.app-consumer.display_name",
+              "confluent_service_account.app-consumer",
+              "confluent_service_account.app-consumer.id",
+              "confluent_service_account.app-consumer",
+              "confluent_service_account.app-consumer.display_name",
+              "confluent_service_account.app-consumer",
+              "confluent_api_key.app-consumer-kafka-api-key.id",
+              "confluent_api_key.app-consumer-kafka-api-key",
+              "confluent_service_account.app-consumer.display_name",
+              "confluent_service_account.app-consumer",
+              "confluent_api_key.app-consumer-kafka-api-key.secret",
+              "confluent_api_key.app-consumer-kafka-api-key",
+              "confluent_kafka_topic.orders.topic_name",
+              "confluent_kafka_topic.orders",
+              "confluent_service_account.app-producer.display_name",
+              "confluent_service_account.app-producer",
+              "confluent_service_account.app-consumer.display_name",
+              "confluent_service_account.app-consumer",
+              "confluent_kafka_topic.orders.topic_name",
+              "confluent_kafka_topic.orders",
+              "confluent_service_account.app-producer.display_name",
+              "confluent_service_account.app-producer",
+              "confluent_kafka_topic.orders.topic_name",
+              "confluent_kafka_topic.orders",
+              "confluent_environment.staging.id",
+              "confluent_environment.staging",
+              "confluent_kafka_cluster.standard.id",
+              "confluent_kafka_cluster.standard",
+              "confluent_api_key.app-producer-kafka-api-key.id",
+              "confluent_api_key.app-producer-kafka-api-key",
+              "confluent_api_key.app-producer-kafka-api-key.secret",
+              "confluent_api_key.app-producer-kafka-api-key",
+              "confluent_kafka_topic.orders.topic_name",
+              "confluent_kafka_topic.orders",
+              "confluent_service_account.app-consumer.display_name",
+              "confluent_service_account.app-consumer",
+              "confluent_kafka_topic.orders.topic_name",
+              "confluent_kafka_topic.orders",
+              "confluent_environment.staging.id",
+              "confluent_environment.staging",
+              "confluent_kafka_cluster.standard.id",
+              "confluent_kafka_cluster.standard",
+              "confluent_api_key.app-consumer-kafka-api-key.id",
+              "confluent_api_key.app-consumer-kafka-api-key",
+              "confluent_api_key.app-consumer-kafka-api-key.secret",
+              "confluent_api_key.app-consumer-kafka-api-key"
+            ]
+          }
+        }
+      },
+      "resources": [
+        {
+          "address": "confluent_api_key.app-consumer-kafka-api-key",
+          "mode": "managed",
+          "type": "confluent_api_key",
+          "name": "app-consumer-kafka-api-key",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "description": {
+              "constant_value": "Kafka API Key that is owned by 'app-consumer' service account"
+            },
+            "display_name": {
+              "constant_value": "app-consumer-kafka-api-key"
+            },
+            "managed_resource": [
+              {
+                "api_version": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.api_version",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                },
+                "environment": [
+                  {
+                    "id": {
+                      "references": [
+                        "confluent_environment.staging.id",
+                        "confluent_environment.staging"
+                      ]
+                    }
+                  }
+                ],
+                "id": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.id",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                },
+                "kind": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.kind",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                }
+              }
+            ],
+            "owner": [
+              {
+                "api_version": {
+                  "references": [
+                    "confluent_service_account.app-consumer.api_version",
+                    "confluent_service_account.app-consumer"
+                  ]
+                },
+                "id": {
+                  "references": [
+                    "confluent_service_account.app-consumer.id",
+                    "confluent_service_account.app-consumer"
+                  ]
+                },
+                "kind": {
+                  "references": [
+                    "confluent_service_account.app-consumer.kind",
+                    "confluent_service_account.app-consumer"
+                  ]
+                }
+              }
+            ]
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "confluent_api_key.app-manager-kafka-api-key",
+          "mode": "managed",
+          "type": "confluent_api_key",
+          "name": "app-manager-kafka-api-key",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "description": {
+              "constant_value": "Kafka API Key that is owned by 'app-manager' service account"
+            },
+            "display_name": {
+              "constant_value": "app-manager-kafka-api-key"
+            },
+            "managed_resource": [
+              {
+                "api_version": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.api_version",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                },
+                "environment": [
+                  {
+                    "id": {
+                      "references": [
+                        "confluent_environment.staging.id",
+                        "confluent_environment.staging"
+                      ]
+                    }
+                  }
+                ],
+                "id": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.id",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                },
+                "kind": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.kind",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                }
+              }
+            ],
+            "owner": [
+              {
+                "api_version": {
+                  "references": [
+                    "confluent_service_account.app-manager.api_version",
+                    "confluent_service_account.app-manager"
+                  ]
+                },
+                "id": {
+                  "references": [
+                    "confluent_service_account.app-manager.id",
+                    "confluent_service_account.app-manager"
+                  ]
+                },
+                "kind": {
+                  "references": [
+                    "confluent_service_account.app-manager.kind",
+                    "confluent_service_account.app-manager"
+                  ]
+                }
+              }
+            ]
+          },
+          "schema_version": 0,
+          "depends_on": [
+            "confluent_role_binding.app-manager-kafka-cluster-admin"
+          ]
+        },
+        {
+          "address": "confluent_api_key.app-producer-kafka-api-key",
+          "mode": "managed",
+          "type": "confluent_api_key",
+          "name": "app-producer-kafka-api-key",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "description": {
+              "constant_value": "Kafka API Key that is owned by 'app-producer' service account"
+            },
+            "display_name": {
+              "constant_value": "app-producer-kafka-api-key"
+            },
+            "managed_resource": [
+              {
+                "api_version": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.api_version",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                },
+                "environment": [
+                  {
+                    "id": {
+                      "references": [
+                        "confluent_environment.staging.id",
+                        "confluent_environment.staging"
+                      ]
+                    }
+                  }
+                ],
+                "id": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.id",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                },
+                "kind": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.kind",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                }
+              }
+            ],
+            "owner": [
+              {
+                "api_version": {
+                  "references": [
+                    "confluent_service_account.app-producer.api_version",
+                    "confluent_service_account.app-producer"
+                  ]
+                },
+                "id": {
+                  "references": [
+                    "confluent_service_account.app-producer.id",
+                    "confluent_service_account.app-producer"
+                  ]
+                },
+                "kind": {
+                  "references": [
+                    "confluent_service_account.app-producer.kind",
+                    "confluent_service_account.app-producer"
+                  ]
+                }
+              }
+            ]
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "confluent_environment.staging",
+          "mode": "managed",
+          "type": "confluent_environment",
+          "name": "staging",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "display_name": {
+              "constant_value": "Staging"
+            }
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "confluent_kafka_acl.app-consumer-read-on-group",
+          "mode": "managed",
+          "type": "confluent_kafka_acl",
+          "name": "app-consumer-read-on-group",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "credentials": [
+              {
+                "key": {
+                  "references": [
+                    "confluent_api_key.app-manager-kafka-api-key.id",
+                    "confluent_api_key.app-manager-kafka-api-key"
+                  ]
+                },
+                "secret": {
+                  "references": [
+                    "confluent_api_key.app-manager-kafka-api-key.secret",
+                    "confluent_api_key.app-manager-kafka-api-key"
+                  ]
+                }
+              }
+            ],
+            "host": {
+              "constant_value": "*"
+            },
+            "kafka_cluster": [
+              {
+                "id": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.id",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                }
+              }
+            ],
+            "operation": {
+              "constant_value": "READ"
+            },
+            "pattern_type": {
+              "constant_value": "PREFIXED"
+            },
+            "permission": {
+              "constant_value": "ALLOW"
+            },
+            "principal": {
+              "references": [
+                "confluent_service_account.app-consumer.id",
+                "confluent_service_account.app-consumer"
+              ]
+            },
+            "resource_name": {
+              "constant_value": "confluent_cli_consumer_"
+            },
+            "resource_type": {
+              "constant_value": "GROUP"
+            },
+            "rest_endpoint": {
+              "references": [
+                "confluent_kafka_cluster.standard.rest_endpoint",
+                "confluent_kafka_cluster.standard"
+              ]
+            }
+          },
+          "schema_version": 2
+        },
+        {
+          "address": "confluent_kafka_acl.app-consumer-read-on-topic",
+          "mode": "managed",
+          "type": "confluent_kafka_acl",
+          "name": "app-consumer-read-on-topic",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "credentials": [
+              {
+                "key": {
+                  "references": [
+                    "confluent_api_key.app-manager-kafka-api-key.id",
+                    "confluent_api_key.app-manager-kafka-api-key"
+                  ]
+                },
+                "secret": {
+                  "references": [
+                    "confluent_api_key.app-manager-kafka-api-key.secret",
+                    "confluent_api_key.app-manager-kafka-api-key"
+                  ]
+                }
+              }
+            ],
+            "host": {
+              "constant_value": "*"
+            },
+            "kafka_cluster": [
+              {
+                "id": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.id",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                }
+              }
+            ],
+            "operation": {
+              "constant_value": "READ"
+            },
+            "pattern_type": {
+              "constant_value": "LITERAL"
+            },
+            "permission": {
+              "constant_value": "ALLOW"
+            },
+            "principal": {
+              "references": [
+                "confluent_service_account.app-consumer.id",
+                "confluent_service_account.app-consumer"
+              ]
+            },
+            "resource_name": {
+              "references": [
+                "confluent_kafka_topic.orders.topic_name",
+                "confluent_kafka_topic.orders"
+              ]
+            },
+            "resource_type": {
+              "constant_value": "TOPIC"
+            },
+            "rest_endpoint": {
+              "references": [
+                "confluent_kafka_cluster.standard.rest_endpoint",
+                "confluent_kafka_cluster.standard"
+              ]
+            }
+          },
+          "schema_version": 2
+        },
+        {
+          "address": "confluent_kafka_acl.app-producer-write-on-topic",
+          "mode": "managed",
+          "type": "confluent_kafka_acl",
+          "name": "app-producer-write-on-topic",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "credentials": [
+              {
+                "key": {
+                  "references": [
+                    "confluent_api_key.app-manager-kafka-api-key.id",
+                    "confluent_api_key.app-manager-kafka-api-key"
+                  ]
+                },
+                "secret": {
+                  "references": [
+                    "confluent_api_key.app-manager-kafka-api-key.secret",
+                    "confluent_api_key.app-manager-kafka-api-key"
+                  ]
+                }
+              }
+            ],
+            "host": {
+              "constant_value": "*"
+            },
+            "kafka_cluster": [
+              {
+                "id": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.id",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                }
+              }
+            ],
+            "operation": {
+              "constant_value": "WRITE"
+            },
+            "pattern_type": {
+              "constant_value": "LITERAL"
+            },
+            "permission": {
+              "constant_value": "ALLOW"
+            },
+            "principal": {
+              "references": [
+                "confluent_service_account.app-producer.id",
+                "confluent_service_account.app-producer"
+              ]
+            },
+            "resource_name": {
+              "references": [
+                "confluent_kafka_topic.orders.topic_name",
+                "confluent_kafka_topic.orders"
+              ]
+            },
+            "resource_type": {
+              "constant_value": "TOPIC"
+            },
+            "rest_endpoint": {
+              "references": [
+                "confluent_kafka_cluster.standard.rest_endpoint",
+                "confluent_kafka_cluster.standard"
+              ]
+            }
+          },
+          "schema_version": 2
+        },
+        {
+          "address": "confluent_kafka_cluster.standard",
+          "mode": "managed",
+          "type": "confluent_kafka_cluster",
+          "name": "standard",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "availability": {
+              "constant_value": "SINGLE_ZONE"
+            },
+            "cloud": {
+              "constant_value": "AWS"
+            },
+            "display_name": {
+              "constant_value": "inventory"
+            },
+            "environment": [
+              {
+                "id": {
+                  "references": [
+                    "confluent_environment.staging.id",
+                    "confluent_environment.staging"
+                  ]
+                }
+              }
+            ],
+            "region": {
+              "constant_value": "us-east-2"
+            },
+            "standard": [
+              {}
+            ]
+          },
+          "schema_version": 1
+        },
+        {
+          "address": "confluent_kafka_topic.orders",
+          "mode": "managed",
+          "type": "confluent_kafka_topic",
+          "name": "orders",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "credentials": [
+              {
+                "key": {
+                  "references": [
+                    "confluent_api_key.app-manager-kafka-api-key.id",
+                    "confluent_api_key.app-manager-kafka-api-key"
+                  ]
+                },
+                "secret": {
+                  "references": [
+                    "confluent_api_key.app-manager-kafka-api-key.secret",
+                    "confluent_api_key.app-manager-kafka-api-key"
+                  ]
+                }
+              }
+            ],
+            "kafka_cluster": [
+              {
+                "id": {
+                  "references": [
+                    "confluent_kafka_cluster.standard.id",
+                    "confluent_kafka_cluster.standard"
+                  ]
+                }
+              }
+            ],
+            "rest_endpoint": {
+              "references": [
+                "confluent_kafka_cluster.standard.rest_endpoint",
+                "confluent_kafka_cluster.standard"
+              ]
+            },
+            "topic_name": {
+              "constant_value": "orders"
+            }
+          },
+          "schema_version": 2
+        },
+        {
+          "address": "confluent_role_binding.app-manager-kafka-cluster-admin",
+          "mode": "managed",
+          "type": "confluent_role_binding",
+          "name": "app-manager-kafka-cluster-admin",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "crn_pattern": {
+              "references": [
+                "confluent_kafka_cluster.standard.rbac_crn",
+                "confluent_kafka_cluster.standard"
+              ]
+            },
+            "principal": {
+              "references": [
+                "confluent_service_account.app-manager.id",
+                "confluent_service_account.app-manager"
+              ]
+            },
+            "role_name": {
+              "constant_value": "CloudClusterAdmin"
+            }
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "confluent_service_account.app-consumer",
+          "mode": "managed",
+          "type": "confluent_service_account",
+          "name": "app-consumer",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "description": {
+              "constant_value": "Service account to consume from 'orders' topic of 'inventory' Kafka cluster"
+            },
+            "display_name": {
+              "constant_value": "app-consumer"
+            }
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "confluent_service_account.app-manager",
+          "mode": "managed",
+          "type": "confluent_service_account",
+          "name": "app-manager",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "description": {
+              "constant_value": "Service account to manage 'inventory' Kafka cluster"
+            },
+            "display_name": {
+              "constant_value": "app-manager"
+            }
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "confluent_service_account.app-producer",
+          "mode": "managed",
+          "type": "confluent_service_account",
+          "name": "app-producer",
+          "provider_config_key": "confluent",
+          "expressions": {
+            "description": {
+              "constant_value": "Service account to produce to 'orders' topic of 'inventory' Kafka cluster"
+            },
+            "display_name": {
+              "constant_value": "app-producer"
+            }
+          },
+          "schema_version": 0
+        }
+      ],
+      "variables": {
+        "confluent_cloud_api_key": {
+          "description": "Confluent Cloud API Key (also referred as Cloud API ID)",
+          "sensitive": true
+        },
+        "confluent_cloud_api_secret": {
+          "description": "Confluent Cloud API Secret"
+        }
+      }
+    }
+  }
+}
