@@ -130,7 +130,7 @@
           "provider_name": "registry.terraform.io/confluentinc/confluent",
           "schema_version": 0,
           "values": {
-            "display_name": "Staging"
+            "display_name": "Staging2"
           },
           "sensitive_values": {}
         },
