@@ -17,9 +17,6 @@ jobs:
       with:
         repository: sduff/opa_policy_repo
         path: policies
-
-    - name: Check files
-      run: "ls -alR $GITHUB_WORKSPACE"
      
     - name: Run OPA Tests
       run: chmod a+x opa_validate.sh ; ./opa_validate.sh
